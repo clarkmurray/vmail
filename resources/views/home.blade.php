@@ -30,7 +30,7 @@
                                 <strong>&#9734;</strong>
                             @endif
                         </td>
-                        <td>{{ $message->sender->name }}</td>
+                        <td><a href="/conversation/{{ $message->recipient_id }}/{{ $message->sender_id }}">{{ $message->sender->name }}</a></td>
                         <td><a href="/message/{{ $message->id }}">{{ $message->subject }}</a></td>
                         <td>{{ $message->created_at->toDayDateTimeString() }}</td>
                         <td>

@@ -29,4 +29,6 @@ Route::get('/message/{message}', 'MessagesController@show');
 
 Route::get('/messages/create', 'MessagesController@create');
 
+Route::get('/conversation/{recipient}/{sender}', 'ConversationController@index');
+
 Route::delete('/messages/{message}', 'MessagesController@destroy');
