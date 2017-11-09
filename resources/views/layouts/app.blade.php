@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -28,8 +30,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ url('/messages/create') }}">
+                        New Message
                     </a>
                 </div>
 
@@ -37,6 +39,8 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        <li><a href="{{ route('home') }}">Inbox</a></li>
+                        <li><a href="{{ route('outbox') }}">Outbox</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,6 +76,7 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
