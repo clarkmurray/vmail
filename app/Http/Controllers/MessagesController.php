@@ -111,4 +111,18 @@ class MessagesController extends Controller
         $message->where('id', $id)->delete();
         return back();
     }
+
+    public function star($id) {
+        $message = \App\Message::find($id);
+        if ($message->is_starred === true) {
+            $message->is_starred = false;
+            // $message->update(['is_starred' => false]);
+        } else {
+            $message->is_starred = true;
+            // $message->update(['is_starred' => true]);
+        }
+
+        $message->save();
+        return back();
+    }
 }

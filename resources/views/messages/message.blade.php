@@ -18,7 +18,9 @@
 					<p>From: {{ $message->sender->name }}</p>
 					<p>Sent at: {{ $message->created_at }}</p>
 					<p>{{ $message->body }}</p>
-					<button class="btn btn-primary">Mark as Starred</button>
+                    <form method="get" action="/messages/{{ $message->id }}">
+					   <button type="submit" class="btn btn-primary">Mark as Starred</button>
+                    </form>
 
 				</div>
 			</div>
@@ -35,7 +37,7 @@
 
                     <form method="POST" action="/messages">
                         {{ csrf_field() }}
-                        
+
                         <input name="recipient" type="hidden" value="{{ $message->sender->name }}">
                         <input name="subject" type="hidden" value="{{ $message->subject }}">
                         <div class="form-group">

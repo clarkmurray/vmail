@@ -23,6 +23,8 @@ Route::get('/outbox', 'SentController@index')->name('outbox');
 
 Route::post('/messages', 'MessagesController@store');
 
+Route::get('/messages/{message}', 'MessagesController@star');
+
 Route::get('/message/{message}', 'MessagesController@show');
 
 Route::get('/messages/create', 'MessagesController@create');
