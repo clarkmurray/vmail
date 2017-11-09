@@ -19,7 +19,13 @@
 					<p>Sent at: {{ $message->created_at }}</p>
 					<p>{{ $message->body }}</p>
                     <form method="get" action="/messages/{{ $message->id }}">
-					   <button type="submit" class="btn btn-primary">Mark as Starred</button>
+					   <button type="submit" class="btn btn-primary">
+                            @if ($message->is_starred)
+                                Remove star
+                            @else
+                                Add star
+                            @endif
+                        </button>
                     </form>
 
 				</div>

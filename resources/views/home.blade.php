@@ -34,7 +34,7 @@
                         <td><a href="/message/{{ $message->id }}">{{ $message->subject }}</a></td>
                         <td>{{ $message->created_at->toDayDateTimeString() }}</td>
                         <td>
-                            <form method="post" action="/messages/{{ $message->id }}">
+                            <form method="post" action="/star/{{ $message->id }}">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
                             <button type="submit"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
